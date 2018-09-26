@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Bootstrap第三部分：组件——缩略图</h1>
+
+  <h3>缩略图用在A上</h3>
+  <a href="#" class="thumbnail">
+    <img src="img/1.jpg">
+  </a>
+
+  <h3>缩略图用在DIV上</h3>
+  <div class="thumbnail">
+    <img src="img/1.jpg">
+    <h3>花红似火</h3>
+    <p>Lorem dolor sit amet, adipisicing elit. Assumenda doloribus ducimus, ea facere nisi placeat. Amet consequatur neque obcaecati officiis perspiciatis</p>
+    <a class="btn btn-success" href="#">添加到购物车</a>
+  </div>
+
+  <h3>练习：栅格系统+缩略图</h3>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="img/1.jpg">
+        <h4>世界名画-1</h4>
+        <p>说明文字-1说明文字-1</p>
+        <a class="btn btn-info" href="#">添加到购物车</a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="img/2.jpg">
+        <h4>世界名画-2</h4>
+        <p>说明文字-2说明文字-2</p>
+        <a class="btn btn-info" href="#">添加到购物车</a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="img/3.jpg">
+        <h4>世界名画-3</h4>
+        <p>说明文字-3说明文字-3</p>
+        <a class="btn btn-info" href="#">添加到购物车</a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="img/4.jpg">
+        <h4>世界名画-4</h4>
+        <p>说明文字-4说明文字-4</p>
+        <a class="btn btn-info" href="#">添加到购物车</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

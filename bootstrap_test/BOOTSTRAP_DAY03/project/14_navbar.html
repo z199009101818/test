@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    body {
+      /*margin-top: 50px;*/
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+<!--导航条包含容器，而不是反过来-->
+<div class="navbar navbar-default">
+  <div class="container">
+    <!--第一部分：导航条头部(品牌+汉堡包)-->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TARENA</a>
+      <a class="navbar-toggle" data-toggle="collapse" href="#mymenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <!--第二部分：导航条折叠部分-->
+    <div id="mymenu" class="navbar-collapse collapse">
+      <!--导航条中的导航-->
+      <ul class="nav navbar-nav">
+        <li><a href="#">首页</a></li>
+        <li class="active"><a href="#">新闻</a></li>
+        <li><a href="#">产品</a></li>
+      </ul>
+      <!--导航条中的导航-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">注册</a></li>
+        <li><a href="#">登录</a></li>
+      </ul>
+      <!--导航条中的表单-->
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <label class="sr-only" for="kw">搜索关键字：</label>
+          <input class="form-control" id="kw" placeholder="请输入搜索关键字">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--固定定位在底部的导航条-->
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class="navbar-header">
+      <!--注意：若logo不是文字而是图片，需要自己控制margin-->
+      <a class="navbar-brand" href="#">
+        <img src="img/tlogo.png" style="margin:-15px;">
+      </a>
+      <a href="#" class="navbar-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <div class="navbar-collapse"></div>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <h1>Bootstrap第三部分：组件——响应式导航条</h1>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+达内科技
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

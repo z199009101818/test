@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>窗口右下角消息弹出框</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="css/5_3.css"/>
+  
+ </head>
+ <body>
+  <div id="msg">
+	<a id="cross">X</a>
+  </div>
+  <script>
+	  var adv={//封装广告功能的数据和行为 
+      //总时间,     总距离,    总步数
+      DURATION:2000,DISTANCE:0,STEPS:400,
+      step:0,interval:0,//每步步长和每步时间间隔
+      div:null,//主角元素
+      timer:null,//定时器序号
+      moved:0,//已经移动的步数
+      WAIT:3000,//下移后等待3秒再上移
+      init:function(){
+        //获得id为msg的元素,保存在div属性中
+        this.div=document.getElementById("msg");
+        //获得div计算后的高度，转为浮点数保存在DISTANCE属性中
+        this.DISTANCE=parseFloat(
+          getComputedStyle(this.div).height
+                             //style.height px
+        );
+        //计算step: DIST/STEPS
+        this.step=this.DISTANCE/this.STEPS;
+        //计算interval: DURA/STEPS
+        this.interval=this.DURATION/this.STEPS;
+        //为id为cross的a绑定单击事件
+        document.getElementById("cross")
+                .onclick=function(){
+                  //调用move方法，传入参数-1
+                  this.move(-1);
+                }.bind(this);
+        this.move(1);//启动上移
+      },
+      move:function(dir){//启动上移
+        if(this.timer===null)//如果timer等于null
+          //启动周期性定时器,当前对象的moveUpStep作为任务函数, 时间间隔interval
+          this.timer=setInterval(
+           this.moveStep.bind(this,dir),
+           this.interval
+          );
+      },
+      //上移一步-任务函数
+      moveStep:function(dir){
+        //this->window ->adv
+        //获得div计算后的样式中的bottom转为浮点数保存在变量bottom中
+        var bottom=parseFloat(
+          getComputedStyle(this.div).bottom
+        );
+        //bottom+step
+        //设置div的style的bottom为bottom
+        this.div.style.bottom=
+          bottom+dir*this.step+"px";
+        this.moved++;//moved+1
+        //如果moved==STEPS
+        if(this.moved==this.STEPS){
+          //就停止定时器,清空timer,moved归0
+          clearInterval(this.timer);
+          this.timer=null;
+          this.moved=0;
+          if(dir==-1){//如果dir是-1
+            //调用callback开始等待
+            this.callback();
+          }
+        }
+      },
+      //在下移动画结束后，自动调用
+      callback:function(){
+        //启动一次性定时器，等待WAIT毫秒，再执行上移
+        setTimeout(
+          this.move.bind(this,1),this.WAIT
+        )
+      }
+    }
+    adv.init();
+    debugger;
+  </script>
+ </body>
+</html>
