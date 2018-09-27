@@ -1,6 +1,6 @@
-# my-project
+# todolist
 
-> zjy
+> A Vue.js project
 
 ## Build Setup
 
